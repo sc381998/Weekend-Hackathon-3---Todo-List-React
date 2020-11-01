@@ -9,11 +9,11 @@ function ToDoItem(props) {
   }
   return (
     <>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <li
-          classname="list"
-          style={{ textDecoration: isDone ? "line-through" : "none" }}
-        >
+      <div
+        classname="list"
+        style={{ display: "flex", justifyContent: "space-between" }}
+      >
+        <li style={{ textDecoration: isDone ? "line-through" : "none" }}>
           {props.text.substring(0, 30)}
         </li>
         <div>
@@ -26,7 +26,8 @@ function ToDoItem(props) {
               role="img"
               aria-label="done"
             >
-              🖊
+              <i className="fa fa-pencil editIcon" aria-hidden="true"></i>
+              {/* 🖊 */}
             </span>
             <span
               className="pointer"
@@ -34,7 +35,8 @@ function ToDoItem(props) {
               role="img"
               aria-label="done"
             >
-              ✅
+              <i className="fa fa-thumb-tack pinIcon" aria-hidden="true"></i>
+              {/* ✅ */}
             </span>
             <span
               className="pointer"
@@ -42,7 +44,8 @@ function ToDoItem(props) {
               role="img"
               aria-label="delete"
             >
-              ❌
+              <i className="fa fa-trash deleteIcon" aria-hidden="true"></i>
+              {/* ❌ */}
             </span>
           </div>
         </div>

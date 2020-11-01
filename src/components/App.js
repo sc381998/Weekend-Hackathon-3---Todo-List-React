@@ -20,10 +20,13 @@ export default function App() {
   }
 
   function addItem(buttonType = "Add") {
-    if (buttonType !== "Add") deleteItem(itemId);
-    setItems((prevItems) => {
-      return [...prevItems, inputText];
-    });
+    if (inputText) {
+      if (buttonType !== "Add") deleteItem(itemId);
+
+      setItems((prevItems) => {
+        return [...prevItems, inputText];
+      });
+    }
     setInputText("");
     setButtonType("Add");
   }

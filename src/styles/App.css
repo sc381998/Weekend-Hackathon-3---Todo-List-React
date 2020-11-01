@@ -59,6 +59,18 @@ input:focus {
   margin-bottom: 20px;
 }
 
+.editIcon {
+  color: seagreen;
+  margin: 3px;
+}
+.pinIcon {
+  color: mediumblue;
+  margin: 3px;
+}
+.deleteIcon {
+  color: red;
+  margin: 3px;
+}
 button {
   padding: 0;
   border: none;
