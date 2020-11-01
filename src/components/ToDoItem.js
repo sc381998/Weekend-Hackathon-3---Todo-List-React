@@ -10,7 +10,7 @@ function ToDoItem(props) {
   return (
     <>
       <div
-        classname="list"
+        className="list"
         style={{ display: "flex", justifyContent: "space-between" }}
       >
         <li style={{ textDecoration: isDone ? "line-through" : "none" }}>
@@ -19,7 +19,7 @@ function ToDoItem(props) {
         <div>
           <div style={{ display: "flex", lineHeight: "2.3" }}>
             <span
-              className="pointer"
+              className="pointer edit"
               onClick={() =>
                 props.onEdit(props.text.substring(0, 30), props.id)
               }
@@ -39,7 +39,7 @@ function ToDoItem(props) {
               {/* ❌ */}
             </span>
             <span
-              className="pointer"
+              className="pointer delete"
               onClick={() => props.onChecked(props.id)}
               role="img"
               aria-label="delete"
