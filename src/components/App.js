@@ -8,10 +8,15 @@ export default function App() {
   const [items, setItems] = useState([]);
   const [buttonType, setButtonType] = useState("Add");
   const [itemId, setItemId] = useState();
+
   function handleEdit(text, id) {
     setItemId(id);
     setInputText(text);
     setButtonType("Edit");
+  }
+
+  function hasWhiteSpace(s) {
+    return s.indexOf(" ") >= 0;
   }
 
   function handleChange(event) {
@@ -20,7 +25,7 @@ export default function App() {
   }
 
   function addItem(buttonType = "Add") {
-    if (inputText) {
+    if (inputText && !hasWhiteSpace(inputText)) {
       if (buttonType !== "Add") deleteItem(itemId);
 
       setItems((prevItems) => {

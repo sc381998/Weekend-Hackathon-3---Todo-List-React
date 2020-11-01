@@ -27,7 +27,6 @@ function ToDoItem(props) {
               aria-label="done"
             >
               <i className="fa fa-pencil editIcon" aria-hidden="true"></i>
-              {/* 🖊 */}
             </span>
             <span
               className="pointer"
@@ -37,6 +36,7 @@ function ToDoItem(props) {
             >
               <i className="fa fa-thumb-tack pinIcon" aria-hidden="true"></i>
               {/* ✅ */}
+              {/* ❌ */}
             </span>
             <span
               className="pointer"
@@ -45,7 +45,6 @@ function ToDoItem(props) {
               aria-label="delete"
             >
               <i className="fa fa-trash deleteIcon" aria-hidden="true"></i>
-              {/* ❌ */}
             </span>
           </div>
         </div>
