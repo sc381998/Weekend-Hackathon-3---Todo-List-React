@@ -60,6 +60,9 @@ export default function App() {
 
   function onEditSave(id) {
     if (editableText && !hasWhiteSpace(editableText)) {
+      let arr = [...display];
+      arr[id] = false;
+      setDisplay(arr);
       let textArr = [...items];
       textArr[id] = editableText;
       setItems(textArr);
