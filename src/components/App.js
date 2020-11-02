@@ -59,16 +59,12 @@ export default function App() {
   }
 
   function onEditSave(id) {
-    if (items[id] && !hasWhiteSpace(items[id])) {
-      let arr = [...display];
-      arr[id] = false;
-      setDisplay(arr);
-
+    if (editableText && !hasWhiteSpace(editableText)) {
       let textArr = [...items];
       textArr[id] = editableText;
-
       setItems(textArr);
     }
+    handleCancel(id);
   }
   function handleCancel(id) {
     let arr = [...display];
