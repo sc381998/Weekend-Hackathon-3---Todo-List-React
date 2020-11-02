@@ -6,17 +6,17 @@ function InputArea(props) {
     <div className="form">
       <input
         id="task"
-        className={props.buttonType === "Edit" ? "editTask" : ""}
+        // className={props.buttonType === "Edit" ? "editTask" : ""}
         onChange={handleChange}
         type="text"
         value={inputText}
       />
       <button
         id="btn"
-        className={props.buttonType === "Edit" ? "saveTask" : ""}
-        onClick={() => addItem(props.buttonType)}
+        // className={props.buttonType === "Edit" ? "saveTask" : ""}
+        onClick={addItem}
       >
-        <span>{props.buttonType}</span>
+        <span>Add</span>
       </button>
     </div>
   );
