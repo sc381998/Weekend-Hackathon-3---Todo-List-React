@@ -6,10 +6,7 @@ import InputArea from "./InputArea";
 export default function App() {
   const [inputText, setInputText] = useState("");
   const [items, setItems] = useState([]);
-  const [buttonType, setButtonType] = useState("Add");
-  const [itemId, setItemId] = useState();
   const [display, setDisplay] = React.useState([]);
-
   const [editableText, setEditableText] = React.useState("");
 
   function hasWhiteSpace(s) {
@@ -84,7 +81,6 @@ export default function App() {
           handleChange={handleChange}
           addItem={addItem}
           inputText={inputText}
-          buttonType={buttonType}
         />
         <div>
           <ul className="pl-25">
