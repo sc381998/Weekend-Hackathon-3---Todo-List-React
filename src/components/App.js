@@ -10,11 +10,7 @@ export default function App() {
   const [itemId, setItemId] = useState();
   const [display, setDisplay] = React.useState([]);
 
-  // function handleEdit(text, id) {
-  //   setItemId(id);
-  //   setInputText(text);
-  //   setButtonType("Edit");
-  // }
+  const [editableText, setEditableText] = React.useState("");
 
   function hasWhiteSpace(s) {
     return s.indexOf(" ") >= 0;
@@ -27,8 +23,6 @@ export default function App() {
 
   function addItem() {
     if (inputText && !hasWhiteSpace(inputText)) {
-      // if (buttonType !== "Add") deleteItem(itemId);
-
       setItems((prevItems) => {
         return [...prevItems, inputText];
       });
@@ -50,7 +44,7 @@ export default function App() {
     arr.splice(id, 1);
     setDisplay(arr);
   }
-  const [editableText, setEditableText] = React.useState("");
+
   function handleEdit(id) {
     let arr = [...display];
     arr[id] = true;
@@ -65,14 +59,16 @@ export default function App() {
   }
 
   function onEditSave(id) {
-    let arr = [...display];
-    arr[id] = false;
-    setDisplay(arr);
+    if (items[id] && !hasWhiteSpace(items[id])) {
+      let arr = [...display];
+      arr[id] = false;
+      setDisplay(arr);
 
-    let textArr = [...items];
-    textArr[id] = editableText;
+      let textArr = [...items];
+      textArr[id] = editableText;
 
-    setItems(textArr);
+      setItems(textArr);
+    }
   }
   function handleCancel(id) {
     let arr = [...display];

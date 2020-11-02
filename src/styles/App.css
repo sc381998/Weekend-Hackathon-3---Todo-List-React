@@ -25,6 +25,7 @@ body {
   border-bottom: dashed 3px #fdcb6e;
   font-size: 1rem;
   color: hsla(260, 2%, 25%, 0.7);
+  margin: 0.5rem;
 }
 
 .container {
