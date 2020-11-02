@@ -66,9 +66,9 @@ export default function App() {
       let textArr = [...items];
       textArr[id] = editableText;
       setItems(textArr);
-    }
-    handleCancel(id);
+    } else handleCancel(id);
   }
+
   function handleCancel(id) {
     let arr = [...display];
     arr[id] = false;

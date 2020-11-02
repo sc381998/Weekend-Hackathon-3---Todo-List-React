@@ -19,7 +19,7 @@ function ToDoItem(props) {
             <input
               type="text"
               className="editTask"
-              value={props.item}
+              defaultValue={props.text}
               onChange={props.onEditText}
             />
             <span
