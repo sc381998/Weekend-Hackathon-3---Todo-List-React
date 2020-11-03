@@ -20,11 +20,11 @@ function ToDoItem(props) {
               type="text"
               className="editTask"
               defaultValue={props.text}
-              onChange={props.onEditText}
+              onChange={props.onEditChange}
             />
             <span
               className="saveTask pointer"
-              onClick={() => props.onEditSave(props.id)}
+              onClick={() => props.onSave(props.id)}
               disabled={!props.checkSaveButton}
               role="img"
               aria-label="done"

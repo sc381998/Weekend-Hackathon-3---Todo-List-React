@@ -18,7 +18,7 @@ export default function App() {
     setInputText(newValue);
   }
 
-  function addItem() {
+  function handleAdd() {
     if (inputText && !hasWhiteSpace(inputText)) {
       setItems((prevItems) => {
         return [...prevItems, inputText];
@@ -31,7 +31,7 @@ export default function App() {
     // setButtonType("Add");
   }
 
-  function deleteItem(id) {
+  function handleDelete(id) {
     setItems((prevItems) => {
       return prevItems.filter((item, index) => {
         return index !== id;
@@ -50,13 +50,13 @@ export default function App() {
     setEditableText(items[id]);
   }
 
-  function onEditText(event) {
+  function handleEditChange(event) {
     // editableText = event.target.value;
     setEditableText(event.target.value);
     console.log(editableText);
   }
 
-  function onEditSave(id) {
+  function handleSave(id) {
     if (editableText && !hasWhiteSpace(editableText)) {
       let arr = [...display];
       arr[id] = false;
@@ -82,7 +82,7 @@ export default function App() {
         </div>
         <InputArea
           handleChange={handleChange}
-          addItem={addItem}
+          addItem={handleAdd}
           inputText={inputText}
         />
         <div>
@@ -92,11 +92,11 @@ export default function App() {
                 key={index}
                 id={index}
                 text={todoItem}
-                onDelete={deleteItem}
+                onDelete={handleDelete}
                 onEdit={handleEdit}
+                onEditChange={handleEditChange}
                 onShow={display[index]}
-                onEditText={onEditText}
-                onEditSave={onEditSave}
+                onSave={handleSave}
                 checkSaveButton={editableText}
                 onCancel={handleCancel}
               />
