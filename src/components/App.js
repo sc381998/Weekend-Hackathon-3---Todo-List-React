@@ -9,8 +9,8 @@ export default function App() {
   const [display, setDisplay] = React.useState([]);
   const [editableText, setEditableText] = React.useState("");
 
-  function hasWhiteSpace(s) {
-    return s.indexOf(" ") >= 0;
+  function isBlank(str) {
+    return !str || /^\s*$/.test(str);
   }
 
   function handleChange(event) {
@@ -19,7 +19,7 @@ export default function App() {
   }
 
   function handleAdd() {
-    if (inputText && !hasWhiteSpace(inputText)) {
+    if (inputText && !isBlank(inputText)) {
       setItems((prevItems) => {
         return [...prevItems, inputText];
       });
@@ -57,7 +57,7 @@ export default function App() {
   }
 
   function handleSave(id) {
-    if (editableText && !hasWhiteSpace(editableText)) {
+    if (editableText && !isBlank(editableText)) {
       let arr = [...display];
       arr[id] = false;
       setDisplay(arr);
