@@ -11,7 +11,7 @@ export default function App() {
 
   function isBlank(str) {
     str = str.trim();
-    return !str || 0 === str.length;
+    return !str || 0 === str.length || !Boolean(str);
   }
 
   function handleChange(event) {
