@@ -10,7 +10,8 @@ export default function App() {
   const [editableText, setEditableText] = React.useState("");
 
   function isBlank(str) {
-    return !str || /^\s*$/.test(str);
+    str = str.trim();
+    return !str || 0 === str.length;
   }
 
   function handleChange(event) {
@@ -19,7 +20,7 @@ export default function App() {
   }
 
   function handleAdd() {
-    if (inputText && !isBlank(inputText)) {
+    if (!isBlank(inputText)) {
       setItems((prevItems) => {
         return [...prevItems, inputText];
       });
@@ -57,7 +58,7 @@ export default function App() {
   }
 
   function handleSave(id) {
-    if (editableText && !isBlank(editableText)) {
+    if (!isBlank(editableText)) {
       let arr = [...display];
       arr[id] = false;
       setDisplay(arr);
