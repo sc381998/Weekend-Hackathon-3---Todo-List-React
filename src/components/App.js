@@ -53,6 +53,7 @@ export default function App() {
   function onEditText(event) {
     // editableText = event.target.value;
     setEditableText(event.target.value);
+    console.log(editableText);
   }
 
   function onEditSave(id) {
@@ -64,6 +65,8 @@ export default function App() {
       textArr[id] = editableText;
       setItems(textArr);
     } else handleCancel(id);
+
+    setEditableText("");
   }
 
   function handleCancel(id) {
