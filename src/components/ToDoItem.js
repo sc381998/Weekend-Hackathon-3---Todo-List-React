@@ -51,7 +51,6 @@ function ToDoItem(props) {
           <input
             type="text"
             className="editTask"
-            defaultValue={props.text}
             onChange={props.onEditChange}
           />
           <span
